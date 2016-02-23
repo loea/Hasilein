@@ -99,14 +99,37 @@ private static void moveHasen(){
         {
             for(int j=0; j<meinArray2.length; j++)
             {
-               if (meinArray2[i][j].equals("H") )
+               if (meinArray2[i][j].equals("H"))
                 {
-                    meinArray[i][j]= ".";
-                    meinArray[i][j+1]="H";
                     
-                    
+                    if(j==13)
+                    {
+                        meinArray[i][13] = ".";
+                        meinArray[i][0] = "H";
+                    }     
+                    else
+                    {
+                        meinArray[i][j]= ".";
+                        meinArray[i][j+1]="H";
+                    }
                 }
+      /*   if (meinArray2[i][j].equals("F"))
+                {
+                    
+                    if(j==13)
+                    {
+                        meinArray[13][j] = ".";
+                        meinArray[0][j] = "F";
+                    }     
+                    else
+                    {
+                        meinArray[i][j]= ".";
+                        meinArray[i+1][j]="F";
+                    }
+                }  */ 
             }
+            
+            
 }
 }
 }
