@@ -113,10 +113,10 @@ private static void moveHasen(){
                         meinArray[i][j+1]="H";
                     }
                 }
-      /*   if (meinArray2[i][j].equals("F"))
+        if (meinArray2[i][j].equals("F"))
                 {
                     
-                    if(j==13)
+                    if(i==13)
                     {
                         meinArray[13][j] = ".";
                         meinArray[0][j] = "F";
@@ -126,7 +126,7 @@ private static void moveHasen(){
                         meinArray[i][j]= ".";
                         meinArray[i+1][j]="F";
                     }
-                }  */ 
+                }  
             }
             
             
