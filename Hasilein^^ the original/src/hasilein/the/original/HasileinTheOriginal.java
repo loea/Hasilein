@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,6 +8,7 @@ package hasilein.the.original;
 
 import java.util.Scanner;
 import frameapi.*;
+import java.util.Random;
 /**
  *
  * @author Lea
@@ -17,6 +19,12 @@ public class HasileinTheOriginal {
      * @param args the command line arguments
      */
      public  static String[][] meinArray = new String [14][14];
+     
+     public static int randomInt(int max) {
+         Random rand = new Random();
+         int randomInteger = rand.nextInt(max);
+         return randomInteger;
+     }
 
     public static void main(String[] args) {
         Spielfeld();
@@ -28,6 +36,7 @@ public class HasileinTheOriginal {
         do{
         if(FrameAPI.newRound) {
         moveHasen();
+        babyhasen();
         FrameAPI.initString(meinArray.length, meinArray);
         FrameAPI.setPlayground();
         }
@@ -103,27 +112,58 @@ private static void moveHasen(){
                 meinArray2[i][j] = meinArray[i][j];
                 
             }
-        }
-    
-    
-    for (int i=0; i<meinArray2.length; i++)
+       }
+       
+       int x = randomInt(4);
+        
+        
+        for (int i=0; i<meinArray2.length; i++)
         {
             for(int j=0; j<meinArray2.length; j++)
             {
                if (meinArray2[i][j].equals("H"))
                 {
                     
+                    if(x==0)
+                    {
+                        meinArray[i][j] = ".";
+                        meinArray[i][j+1] = "H";
+                        
                     if(j==13)
+                    {
+                        meinArray[i][13]= ".";
+                        meinArray[i][0]="H";
+                    }
+                    }
+                    
+                    
+                   /*   if(j==13)
                     {
                         meinArray[i][13] = ".";
                         meinArray[i][0] = "H";
                     }     
-                    else
+                    if()
                     {
                         meinArray[i][j]= ".";
-                        meinArray[i][j+1]="H";
+                        meinArray[i][j+x]="H";
                     }
-                }}}
+                       if(j==13)
+                    {
+                        meinArray[i][13] = ".";
+                        meinArray[i][0] = "H";
+                    }     
+           if()
+                    {
+                        meinArray[i][j]= ".";
+                        meinArray[i][j+x]="H";
+                    }
+                        if(j==13)
+                    {
+                        meinArray[i][13] = ".";
+                        meinArray[i][0] = "H";
+                    }     
+             
+                */}}}
        
           for (int i=0; i<meinArray2.length; i++)
         {
@@ -143,10 +183,38 @@ private static void moveHasen(){
                         meinArray[i][j]= ".";
                         meinArray[i+1][j]="F";
                     }
-                }  
-            }}
-            
-      
+                }}}}
 
-}
-}
+     public static void babyhasen(){
+       String[][] meinArray2 = new String [14][14];
+ 
+   // meinArray2=meinArray.clone();
+ for (int i=0; i<meinArray2.length; i++)
+        {
+            for(int j=0; j<meinArray2.length; j++)
+            {
+                meinArray2[i][j] = meinArray[i][j];
+                
+            }
+        }
+    
+    
+    for (int i=0; i<meinArray2.length; i++)
+        {
+            for(int j=0; j<meinArray2.length; j++)
+            {
+               if(meinArray2[i][j].equals("H"))
+               {
+                  if(meinArray2[i+1][j].equals("H")){
+               }
+                 meinArray[i+1][j]="H";
+                 meinArray[i][j]="H";
+                 meinArray[i][j+1]="h";
+               }
+               
+               
+               }  
+
+}}}
+                 
+                    
